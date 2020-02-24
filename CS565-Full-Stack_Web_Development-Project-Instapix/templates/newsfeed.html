@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News Feed</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    
+</head>
+
+<body>
+  <nav class="navigation">
+    <div class="navigation__column">
+      <a href="{{url_for('newsfeed')}}">
+        <i color="white" class="fa fa-instagram fa-2x"><em>  Instapix</em></i>
+      </a>
+    </div>
+    <div class="navigation__column">
+        <img src="{{url_for('download_file', filename= current_user_photo )}}" alt="{{ current_user_photo }}" class="photo__g" />
+        <span class="photo__author">{{current_user}}</span>
+    </div>
+
+
+    <div class="navigation__column">
+      <ul class="navigations__links">
+        <li class="navigation__list-item">
+          <a href="{{url_for('posts')}}" class="navigation__link">
+          <i class="fa fa-plus fa-lg" title="Create Post"></i>
+        </a>
+
+        </li>
+
+
+        <li class="navigation__list-item">
+          <a href="{{url_for('explore')}}" class="navigation__link">
+            <i class="fa fa-compass fa-lg"></i>
+          </a>
+        </li>
+
+        <li class="navigation__list-item">
+          <a href="{{url_for('profile')}}" class="navigation__link">
+            <i class="fa fa-user-o fa-lg"></i>
+          </a>
+        </li>
+
+        <li class="navigation__list-item">
+            <a href="{{url_for('profile')}}" class="navigation__link">
+              <i class="fa fa-sign-out fa-lg"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <main id="feed">
+      {% for author, media in feed.items() %}
+      {% for m in media %}
+      <div class="photo">
+
+
+        <header class="photo__header">
+          <img src="{{url_for('download_file', filename= followee_profile_photo[author] )}}" class="photo__g"/>
+          <div class="photo__user-info">
+            <span class="photo__author">{{ author }}</span>           
+          </div>
+          
+        </header>
+        <div>
+            <span class="photo__description" id="feed_description">{{ m[-1] }}</span>
+        </div>
+        <img src="{{url_for('download_file', filename= m[0] )}}" alt="{{ m[0] }}">
+
+      <!-- <img src="{{url_for('static', filename='images/feedPhoto.png')}}" />  -->
+      </div>
+      {% endfor %}
+      {% endfor %}
+
+  </main>
+
+</body>
+
+</html>

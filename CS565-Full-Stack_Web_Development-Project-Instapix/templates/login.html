@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Instapix Signup</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="{{url_for('static', filename='images/signup.jpg')}}" class="collage">
+        </div>
+        <div class="col">
+          <div class="right-column text-center">
+            <h2 class="instapix"><em>Instapix</em><h2>
+            <p class="info">Sign up to see photos from your friends</p>
+            <form action="" method="POST" class="loginform">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Username" name="username" value="{{request.form.username}}" required>
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" name="password" value="{{request.form.password}}" required>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            </form>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                 <div id ="display-flash" class="alert alert-{{ category }}" role="alert"> {{ message }}</div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          </div>
+          <div class="right-column-login text-center">
+            <p>Don't have an account? <a href="{{url_for('index')}}">Sign Up</a></p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
+

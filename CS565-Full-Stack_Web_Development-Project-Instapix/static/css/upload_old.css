@@ -1,0 +1,81 @@
+/* body, html{
+    height:100%;
+    margin: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+} */
+.icon{
+    margin: 15px;
+    width: 75px;
+    height: 75px;
+    background-color: azure;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 2px #ccc;
+    position: relative;
+    float: left;
+    border-radius: 5px;
+}
+.camera-icon{
+    display: block;
+    width: 70%;
+    height: 50%;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    background-color: #000;
+    border-radius: 5px;
+}
+.camera-icon::after{
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 7px solid #fff;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    background-color: #000;
+    border-radius: 15px;
+}
+.camera-icon::before{
+    content: "";
+    display: block;
+    width: 50%;
+    height: 10px;
+    position: absolute;
+    top: -16%;
+    left: 25%;
+    background-color: #000;
+    border-radius: 10px;
+}
+.upload-window {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  .upload-window-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  .close-window {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close-window:hover,
+  .close-window:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }

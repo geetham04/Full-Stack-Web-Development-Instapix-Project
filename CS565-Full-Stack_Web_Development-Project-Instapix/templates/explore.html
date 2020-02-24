@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Explore</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="navigation__column">
+            <a href="{{ url_for('newsfeed')}}">
+                <i class="fa fa-instagram fa-2x"><em> Instapix</em></i>
+            </a>
+        </div>
+
+        <div class="navigation__column">
+            <img src="{{url_for('download_file', filename= current_user_photo )}}" alt="{{ current_user_photo }}" class="photo__g" />
+            <span class="photo__author">{{current_user}}</span>
+        </div>
+        
+        
+    <div class="navigation__column">
+            <ul class="navigations__links">
+              <li class="navigation__list-item">
+                <a href="{{url_for('posts')}}" class="navigation__link">
+                <i class="fa fa-plus fa-lg" title="Create Post"></i>
+              </a>
+      
+              </li>
+      
+      
+              <li class="navigation__list-item">
+                <a href="{{url_for('explore')}}" class="navigation__link">
+                  <i class="fa fa-compass fa-lg"></i>
+                </a>
+              </li>
+      
+              <li class="navigation__list-item">
+                <a href="{{url_for('profile')}}" class="navigation__link">
+                  <i class="fa fa-user-o fa-lg"></i>
+                </a>
+              </li>
+              <li class="navigation__list-item">
+                    <a href="{{url_for('profile')}}" class="navigation__link">
+                      <i class="fa fa-sign-out fa-lg"></i>
+                    </a>
+                  </li>
+            </ul>
+          </div>
+    </nav>
+    <main id="explore">
+        <ul class="explore__users">
+            <li class="explore__user">
+                
+                    <form action="" method="POST">
+                    {% for user in users %}
+                  <div class="explore__user-column">
+                    <input type="checkbox" name="follow-check-box" value="{{user[0]}}">
+                    <!-- add profile picture for respective users(suggested followees) in explore page -->
+                    <img src="{{url_for('download_file', filename= user[-1] )}}" class="explore__g" alt="{{ user[-1] }}">
+
+
+                    <!-- <img src="{{url_for('static', filename='images/geetha.png')}}" class="explore__g"/> -->
+                    <div class="explore__info">
+                        <span class="explore__username" >{{user[0]}}</span>
+                        <span class="explore__full-name" >{{user[1]}}</span>
+                    </div>
+                </div>
+                
+                    
+                    {% endfor %}
+                    {% if users %}
+                    <div>
+                        <button type="submit">Follow</button>
+                    </div>
+                    {% else %}
+                    <p>No users to follow</p>
+                    {% endif %}
+                    </form>
+                    
+                
+            </li>
+        </ul>
+    </main>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="{{url_for('static', filename='css/upload.css')}}">
+</head>
+<body>
+    
+    <!-- <div class="icon">
+        <div class="camera-icon"><span></span>
+        </div>
+    </div> -->
+
+    <button id="add-btn">
+        <div class="icon">
+            <div class="camera-icon"><span></span>
+            </div>
+        </div>
+    </button>
+    <div id="upload_window" class="upload-window">
+        <div class="upload-window-content">
+            <span class="close-window">&times;</span>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <fieldset class="content">
+                    <input type="file" name="pictures" accept="image/*" multiple="multiple" value="{{request.form.pictures}}">
+                    <button id="upload-btn" class="upload">Upload</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- <script>
+        var uploadWindow = document.getElementById("upload_window");
+        var addPhotosButton = document.getElementById("add-photos");
+        var span = document.getElementsByClassName("close-window")[0];
+
+        addPhotosButton.onclick = function(){
+            uploadWindow.style.display = "block";
+        }
+        span.onclick = function(){
+            uploadWindow.style.display = "none";
+        }
+        window.onclick = function(event){
+            if (event.target == uploadWindow){
+                uploadWindow.style.display = "none";
+            }
+        }
+    </script> -->
+
+    
+    <script src="{{url_for('static', filename='js/upload.js')}}"></script>
+    
+</body>
+</html>

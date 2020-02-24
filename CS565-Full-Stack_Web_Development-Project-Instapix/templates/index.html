@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Instapix Signup</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="{{url_for('static', filename='images/signup.jpg')}}" class="collage">
+        </div>
+        <div class="col">
+          <div class="right-column text-center">
+            <h2 class="instapix"><em>Instapix</em><h2>
+            
+            <p class="info">Sign up to see photos from your friends</p>
+              <form action="" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Email" name="email" value="{{request.form.email}}">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Full Name" name="name" value="{{request.form.name}}">
+              </div>
+               <div class="form-group">
+                <input type="text" class="form-control" placeholder="Username" name="username" value="{{request.form.username}}">
+               </div>
+               <div class="form-group">
+                 <input type="password" class="form-control" placeholder="Password" name="password" value="{{request.form.password}}">
+               </div>
+               <!-- <div class="form-group">
+                  <input type="file" id="file-upload" name="picture" accept="image/*" multiple="multiple" value="{{request.form.picture}}">
+               </div> -->
+               <div class="form-group">
+                  <img id="profileImage"src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg" class="rounded-circle z-depth-1-half avatar-pic" alt="example placeholder avatar">
+                  <label class="button" for="my-file-selector">
+                    <!-- <input id="imageUpload" type="file" style="display:none" name="picture" accept="image/*" multiple="multiple" value="{{request.form.picture}}"> -->
+                    <input id="my-file-selector" type="file" style="display:none" name="picture" accept="image/*" value="{{request.form.picture}}">
+                    Add photo
+                  </label>
+                </div>
+               <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+            </form>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                 <div id ="display-flash" class="alert alert-{{ category }}" role="alert"> {{ message }}</div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+          </div>
+          <div class="right-column-login text-center">
+            <p>Have an account? <a href="{{url_for('login')}}">Login</a></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script type="text/javascript">
+            $("#profileImage").click(function(e) {
+              $("#my-file-selector").click();
+            });
+            function fasterPreview(uploader) {
+              if (uploader.files && uploader.files[0]) {
+                $('#profileImage').attr('src',
+                  window.URL.createObjectURL(uploader.files[0]));
+              }
+            }
+            $("#my-file-selector").change(function() {
+              fasterPreview(this);
+            });
+          </script>
+  </body>
+</html>
+

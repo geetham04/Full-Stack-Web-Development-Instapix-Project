@@ -1,0 +1,91 @@
+:root {
+  --background-color: #fafafa;
+  --fd-blue: #3897f0;
+  --link-color: #003569;
+}
+
+body{
+  background-color: #fafafa
+}
+.container{
+  margin-top: 20px;
+}
+.instapix{
+  font-weight: 600px;
+}
+.collage{
+  padding-top:50px;
+  height:450px;
+  float:right;
+  margin:10px;
+}
+.right-column{
+  background:#fff;
+  border: 1px solid #e6e6e6;
+  width:350px;
+  margin:10px;
+  padding:40px;
+}
+.instagramlogo{
+  margin:15px auto;
+}
+.info{
+  font-weight: 600px;
+  line-height: 20px;
+  font-size: 17px;
+  color: #999;
+}
+.form-group{
+  margin-bottom: 6px;
+}
+.form-control{
+  background: #fafafa;
+  border: 1px solid #efefef;
+  font-size: 12px;
+}
+.btn{
+  margin: 12px auto;
+  padding: 2px;
+  font-weight: 600;
+}
+.btn-primary{
+  background-color: #3897f0;
+  border: 1px solid #3897f0;
+}
+.right-column-login{
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  width: 350px;
+  margin: 10px;
+  padding: 20px;
+}
+.right-column-login a:hover{
+  text-decoration: none;
+}
+.button{
+  /* background-color: #59698D; */
+  border: 1px solid;
+  cursor: pointer;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #59698D;
+  border: none;
+  border-radius: 15px;
+}
+
+.avatar-pic{
+width:60px;
+}
+
+#display-flash {
+  font-weight: 600px;
+  line-height: 20px;
+  font-size: 17px;
+  /* color: #999; */
+}
