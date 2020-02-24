@@ -1,4 +1,4 @@
-# Full-Stack-Web-Development-Instapix-Project
+## Full-Stack-Web-Development-Instapix-Project
 ### Overview:
 #### About the application:</br>
 Instapix is a photo sharing application, which allows users to share photos, follow other users and view the posts of their followers. Every user who creates an Instapix account has a profile and a newsfeed.
@@ -30,12 +30,17 @@ Database - SQLite3</br>
 Technical Details:</br>
 Frontend designed using HTML, CSS and JavaScript:</br>
 Sign Up/Sign In – Designed signup and signin form using html, and styled the elements using css, used attribute selectors for styling forms, used float on image elements, used bootstrap for styling buttons.</br>
-Navigation bar – used keyframes to slide navigation links. Used flex display for navigation bar and positioned navigation bar elements with space in between using space-between justify content.</br>
-In navigation bar, positioned newsfeed logo following Instapix title on left side, centered signed in user’s profile picture and user name, positioned navigation links for creating posts, explore, profile, and logout.</br> 
+
+Navigation bar – used keyframes to slide navigation links. Used flex display for navigation bar and positioned navigation bar elements with space in between using space-between justify content. In navigation bar, positioned newsfeed logo following Instapix title on left side, centered signed in user’s profile picture and user name, positioned navigation links for creating posts, explore, profile, and logout.</br> 
+
 Newsfeed – used flex layout for the display of newsfeed page, aligned items in the center, and used flex column direction, used block display for displaying user picture and user name of that particular post.</br>
+
 Createpost – used flex layout to control the alignment of elements. Displayed user picture along with text area to provide some text about post. Displayed camera icon using font awesome for uploading multiple pictures.</br>
+
 Explore - used flex layout for the display of users along with checkbox in column direction followed by follow button.</br>
+
 Profile – Used flex layout and styled profile container by displaying username and full name next to image by applying space in between the elements.</br>
+
 Signout – Passes a html form in signout icon to display logout page and applied styles accordingly.</br>
 
 Issues Faced:
